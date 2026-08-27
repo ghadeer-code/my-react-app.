@@ -1,0 +1,185 @@
+/* إعدادات الخطوط والصفحة العامة */
+@import url('https://googleapis.com');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* الكارد الرئيسي */
+.auth-container {
+  display: flex;
+  width: 900px;
+  max-width: 95%;
+  height: 550px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* القسم البنفسجي الأيسر مع نمط الخلفية المتموجة */
+.left-side {
+  flex: 1;
+  background: linear-gradient(135deg, #6c5ce7, #5340e6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  padding: 40px;
+  text-align: center;
+  position: relative;
+}
+
+.left-side h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.left-side p {
+  font-size: 1rem;
+  opacity: 0.85;
+  margin-bottom: 30px;
+}
+
+/* زر تسجيل الدخول الشفاف */
+.log-in-btn {
+  background: transparent;
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  padding: 12px 45px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.log-in-btn:hover {
+  background-color: #ffffff;
+  color: #5340e6;
+  border-color: #ffffff;
+}
+
+/* القسم الأبيض الأيمن للفورم */
+.right-side {
+  flex: 1.2;
+  padding: 50px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* لتوزيع العنوان، الفورم، والروابط السفلية */
+  position: relative;
+}
+
+.right-side h2 {
+  color: #2d3748;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 25px 0;
+  text-align: center;
+}
+
+/* تصميم حقول الإدخال والفورم */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="password"] {
+  width: 100%;
+  padding: 14px 15px;
+  border: none;
+  border-bottom: 2px solid #e2e8f0;
+  font-size: 0.95rem;
+  color: #4a5568;
+  background-color: transparent;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+/* تأثير الخط الملون عند التركيز على الحقل */
+.signup-form input:focus {
+  outline: none;
+  border-bottom-color: #5340e6;
+}
+
+/* تخصيص الـ Placeholder ليصبح ناعماً وخفيفاً */
+.signup-form input::placeholder {
+  color: #a0aec0;
+  opacity: 0.8;
+}
+
+/* خيار شروط الاستخدام (Checkbox) */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: #4a5568;
+  margin-top: 5px;
+}
+
+.checkbox-group input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #5340e6; /* تلوين مربع الاختيار بالبنفسجي */
+}
+
+/* زر التسجيل الأساسي العريض */
+.submit-btn {
+  background-color: #5340e6;
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  border-radius: 30px; /* تصميم دائري الحواف مثل الصورة */
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 15px;
+  box-shadow: 0 4px 12px rgba(83, 64, 230, 0.2);
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #3b2bc4;
+  box-shadow: 0 6px 18px rgba(83, 64, 230, 0.3);
+}
+
+/* الروابط السفلية الصغيرة */
+.form-footer {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-size: 0.8rem;
+  color: #718096;
+  margin-top: 20px;
+}
+
+.form-footer a {
+  color: #718096;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.form-footer a:hover {
+  color: #5340e6;
+}
