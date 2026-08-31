@@ -24,10 +24,10 @@ body {
   overflow: hidden;
 }
 
-/* القسم البنفسجي الأيسر مع نمط الخلفية المتموجة */
+/* القسم البنفسجي الأيسر */
 .left-side {
   flex: 1;
-  background: linear-gradient(135deg, #6c5ce7, #5340e6);
+  background: linear-gradient(135deg, #6c5ce7, #cc40d9);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,18 +73,19 @@ body {
 /* القسم الأبيض الأيمن للفورم */
 .right-side {
   flex: 1.2;
-  padding: 50px 60px;
+  padding: 35px 50px; /* 🛠️ تم تقليل البادينغ لرفع العناصر وتوفير مساحة عمودية */
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* لتوزيع العنوان، الفورم، والروابط السفلية */
+  justify-content: space-between;
   position: relative;
+  box-sizing: border-box; /* تضمن حساب الطول الداخلي بدقة */
 }
 
 .right-side h2 {
   color: #2d3748;
   font-size: 2rem;
   font-weight: 700;
-  margin: 0 0 25px 0;
+  margin: 0 0 15px 0; /* 🛠️ تقليل المسافة أسفل العنوان */
   text-align: center;
 }
 
@@ -92,7 +93,7 @@ body {
 .signup-form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 12px; /* 🛠️ تقليل الفراغات بين الحقول من 18px إلى 12px لضغط العناصر صعوداً */
 }
 
 .input-group {
@@ -105,11 +106,11 @@ body {
 .signup-form input[type="email"],
 .signup-form input[type="password"] {
   width: 100%;
-  padding: 14px 15px;
+  padding: 10px 15px; /* 🛠️ تقليل البادينغ الداخلي للإنبوت ليصبح أنحف وأجمل */
   border: none;
   border-bottom: 2px solid #e2e8f0;
   font-size: 0.95rem;
-  color: #4a5568;
+  color: #1a5ac9;
   background-color: transparent;
   box-sizing: border-box;
   transition: border-color 0.3s ease;
@@ -141,7 +142,7 @@ body {
   width: 16px;
   height: 16px;
   cursor: pointer;
-  accent-color: #5340e6; /* تلوين مربع الاختيار بالبنفسجي */
+  accent-color: #5340e6;
 }
 
 /* زر التسجيل الأساسي العريض */
@@ -149,12 +150,12 @@ body {
   background-color: #5340e6;
   color: #ffffff;
   border: none;
-  padding: 14px;
-  border-radius: 30px; /* تصميم دائري الحواف مثل الصورة */
+  padding: 12px; /* 🛠️ تعديل طفيف ليتناسب مع الأبعاد الجديدة */
+  border-radius: 30px;
   font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
-  margin-top: 15px;
+  margin-top: 10px; /* 🛠️ تقليل المارجن ليرتفع الزر مكانه */
   box-shadow: 0 4px 12px rgba(83, 64, 230, 0.2);
   transition: all 0.3s ease;
 }
@@ -164,6 +165,13 @@ body {
   box-shadow: 0 6px 18px rgba(83, 64, 230, 0.3);
 }
 
+/* 🛠️ زر الإرسال عندما يكون معطلاً */
+.submit-btn:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
 /* الروابط السفلية الصغيرة */
 .form-footer {
   display: flex;
@@ -171,7 +179,7 @@ body {
   gap: 15px;
   font-size: 0.8rem;
   color: #718096;
-  margin-top: 20px;
+  margin-top: 15px; /* 🛠️ تقليل المساحة العلوية للفوتر */
 }
 
 .form-footer a {
@@ -182,4 +190,68 @@ body {
 
 .form-footer a:hover {
   color: #5340e6;
+}
+
+/* 🛠️ تصميم رسائل الخطأ بشكل منطقي ومتناسق مع الألوان */
+.error-text {
+  color: #e53e3e; /* أحمر ناعم ومريح للعين ومتناسق مع التصميم */
+  font-size: 0.8rem;
+  margin: 4px 0 0 0; /* مسافة بسيطة جداً أسفل الحقل مباشرة */
+  font-weight: 500;
+  text-align: left; /* لتتماشى مع محاذاة النص الإنجليزي في الحقول */
+  display: block;
+  animation: fadeIn 0.3s ease; /* تأثير ظهور ناعم عند خروج الخطأ */
+}
+
+/* تأثير ظهور الرسالة بسلاسة */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* 🛠️ واجهة رسالة النجاح الإضافية */
+.success-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  animation: fadeIn 0.4s ease;
+}
+
+.success-icon {
+  font-size: 4rem;
+  color: #5340e6; /* نفس درجة اللون البنفسجي الأساسي للتصميم */
+  background: rgba(83, 64, 230, 0.1);
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.success-container h2 {
+  color: #2d3748;
+  margin-bottom: 10px !important;
+}
+
+.success-container p {
+  font-size: 0.95rem;
+  color: #718096;
+  line-height: 1.6;
+  margin: 0 0 30px 0;
+  max-width: 320px;
+}
+
+.success-container .submit-btn {
+  width: 100%;
+  max-width: 250px;
 }
