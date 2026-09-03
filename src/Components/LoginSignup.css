@@ -1,30 +1,179 @@
-/* إعدادات الخطوط والصفحة العامة */
 @import url('https://googleapis.com');
+
+/* إعدادات الصفحة العامة */
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #f0f2f5;
+  font-family: 'Inter', 'Cairo', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* 🌟 تصميم قسم الـ Hero (التأثير الحركي التعريفي الأول) */
+.hero-section {
+  min-height: 80vh;
+  background: radial-gradient(circle at top right, rgba(204, 64, 217, 0.1), transparent), 
+              radial-gradient(circle at bottom left, rgba(108, 92, 231, 0.1), transparent);
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  text-align: center;
+  padding: 60px 20px;
+  animation: fadeIn 1s ease-out;
 }
 
-/* الكارد الرئيسي */
+.hero-content {
+  max-width: 800px;
+}
+
+.welcome-badge {
+  background-color: rgba(108, 92, 231, 0.1);
+  color: #6c5ce7;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: #1a202c;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #718096;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #6c5ce7, #cc40d9);
+  color: white;
+  border: none;
+  padding: 14px 35px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(108, 92, 231, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 25px rgba(108, 92, 231, 0.3);
+}
+
+.secondary-btn-link {
+  color: #6c5ce7;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+.secondary-btn-link:hover {
+  color: #cc40d9;
+}
+
+/* 🌟 تصميم قسم الميزات (Features) */
+.features-section {
+  padding: 80px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.features-section h2 {
+  font-size: 2.2rem;
+  color: #1a202c;
+  margin-bottom: 50px;
+}
+
+.features-grid {
+  display: flex;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  padding: 35px 25px;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  font-size: 1.3rem;
+  color: #2d3748;
+  margin-bottom: 12px;
+}
+
+.feature-card p {
+  color: #718096;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* 🌟 تصميم وتعديل قسم واجهة التسجيل (الـ Card المطور) */
+.auth-section-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f6f9;
+  padding: 40px 20px;
+}
+
 .auth-container {
   display: flex;
-  width: 900px;
-  max-width: 95%;
-  height: 550px;
+  width: 960px;
+  max-width: 100%;
+  height: 600px;
   background-color: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.06);
   overflow: hidden;
 }
 
-/* القسم البنفسجي الأيسر */
+/* الجزء الأيسر البنفسجي */
 .left-side {
   flex: 1;
   background: linear-gradient(135deg, #6c5ce7, #cc40d9);
@@ -35,151 +184,164 @@ body {
   color: #ffffff;
   padding: 40px;
   text-align: center;
-  position: relative;
 }
 
 .left-side h1 {
-  font-size: 2.8rem;
-  margin-bottom: 15px;
+  font-size: 3rem;
+  margin: 0 0 15px 0;
   font-weight: 700;
-  letter-spacing: -0.5px;
 }
 
 .left-side p {
-  font-size: 1rem;
-  opacity: 0.85;
-  margin-bottom: 30px;
+  font-size: 1.05rem;
+  opacity: 0.9;
+  margin: 0 0 35px 0;
 }
 
-/* زر تسجيل الدخول الشفاف */
 .log-in-btn {
   background: transparent;
   color: #ffffff;
-  border: 1.5px solid rgba(255, 255, 255, 0.7);
-  padding: 12px 45px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  padding: 12px 50px;
   border-radius: 30px;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 .log-in-btn:hover {
   background-color: #ffffff;
-  color: #5340e6;
-  border-color: #ffffff;
+  color: #6c5ce7;
+  transform: scale(1.03);
 }
 
-/* القسم الأبيض الأيمن للفورم */
+/* الجزء الأيمن الأبيض (تم حل مشكلة الهوامش تماماً) */
 .right-side {
   flex: 1.2;
-  padding: 35px 50px; /* 🛠️ تم تقليل البادينغ لرفع العناصر وتوفير مساحة عمودية */
+  padding: 45px 55px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
-  box-sizing: border-box; /* تضمن حساب الطول الداخلي بدقة */
+  box-sizing: border-box;
+}
+
+.form-content-area {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
 }
 
 .right-side h2 {
-  color: #2d3748;
-  font-size: 2rem;
+  color: #1a202c;
+  font-size: 2.2rem;
   font-weight: 700;
-  margin: 0 0 15px 0; /* 🛠️ تقليل المسافة أسفل العنوان */
+  margin: 0 0 25px 0;
   text-align: center;
 }
 
-/* تصميم حقول الإدخال والفورم */
 .signup-form {
   display: flex;
   flex-direction: column;
-  gap: 12px; /* 🛠️ تقليل الفراغات بين الحقول من 18px إلى 12px لضغط العناصر صعوداً */
+  gap: 16px; /* هوامش متناسقة تمنع تداخل العناصر */
 }
 
+/* الحقول المحدثة بإطارات كاملة وناعمة لتظهر مرتبة */
 .input-group {
   position: relative;
   display: flex;
   flex-direction: column;
 }
 
-.signup-form input[type="text"],
-.signup-form input[type="email"],
-.signup-form input[type="password"] {
+.input-group input {
   width: 100%;
-  padding: 10px 15px; /* 🛠️ تقليل البادينغ الداخلي للإنبوت ليصبح أنحف وأجمل */
-  border: none;
-  border-bottom: 2px solid #e2e8f0;
+  padding: 14px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
   font-size: 0.95rem;
-  color: #1a5ac9;
-  background-color: transparent;
+  background-color: #f8fafc;
+  color: #334155;
   box-sizing: border-box;
-  transition: border-color 0.3s ease;
+  transition: all 0.2s ease;
 }
 
-/* تأثير الخط الملون عند التركيز على الحقل */
-.signup-form input:focus {
+.input-group input:focus {
   outline: none;
-  border-bottom-color: #5340e6;
+  border-color: #6c5ce7;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.1);
 }
 
-/* تخصيص الـ Placeholder ليصبح ناعماً وخفيفاً */
-.signup-form input::placeholder {
-  color: #a0aec0;
-  opacity: 0.8;
+/* تنسيق رسائل الخطأ لتظهر أسفل الحقل بدون تخريب الأبعاد */
+.error-text {
+  color: #e53e3e;
+  font-size: 0.8rem;
+  margin: 4px 0 0 4px;
+  font-weight: 500;
+  text-align: left;
 }
 
-/* خيار شروط الاستخدام (Checkbox) */
+.server-error {
+  background-color: #fff5f5;
+  border: 1px solid #fed7d7;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+/* الشروط والأحكام */
 .checkbox-group {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.85rem;
-  color: #4a5568;
-  margin-top: 5px;
+  margin: 5px 0;
 }
 
 .checkbox-group input {
   width: 16px;
   height: 16px;
+  accent-color: #6c5ce7;
   cursor: pointer;
-  accent-color: #5340e6;
 }
 
-/* زر التسجيل الأساسي العريض */
+.checkbox-group label {
+  font-size: 0.9rem;
+  color: #4a5568;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* زر إرسال الفورم العريض والمتناسق مع الحقول */
 .submit-btn {
-  background-color: #5340e6;
+  background: linear-gradient(135deg, #6c5ce7, #cc40d9);
   color: #ffffff;
   border: none;
-  padding: 12px; /* 🛠️ تعديل طفيف ليتناسب مع الأبعاد الجديدة */
-  border-radius: 30px;
+  padding: 14px;
+  border-radius: 12px;
   font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
-  margin-top: 10px; /* 🛠️ تقليل المارجن ليرتفع الزر مكانه */
-  box-shadow: 0 4px 12px rgba(83, 64, 230, 0.2);
-  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(108, 92, 231, 0.15);
+  transition: all 0.2s ease;
+  margin-top: 10px;
 }
 
 .submit-btn:hover {
-  background-color: #3b2bc4;
-  box-shadow: 0 6px 18px rgba(83, 64, 230, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(108, 92, 231, 0.25);
 }
 
-/* 🛠️ زر الإرسال عندما يكون معطلاً */
-.submit-btn:disabled {
-  background-color: #a0aec0;
-  cursor: not-allowed;
-  box-shadow: none;
-}
-
-/* الروابط السفلية الصغيرة */
+/* روابط أسفل الكارد لتبقى ثابتة ومرتبة */
 .form-footer {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  font-size: 0.8rem;
-  color: #718096;
-  margin-top: 15px; /* 🛠️ تقليل المساحة العلوية للفوتر */
+  gap: 12px;
+  color: #a0aec0;
+  font-size: 0.85rem;
+  margin-top: 25px;
 }
 
 .form-footer a {
@@ -189,69 +351,65 @@ body {
 }
 
 .form-footer a:hover {
-  color: #5340e6;
+  color: #6c5ce7;
 }
 
-/* 🛠️ تصميم رسائل الخطأ بشكل منطقي ومتناسق مع الألوان */
-.error-text {
-  color: #e53e3e; /* أحمر ناعم ومريح للعين ومتناسق مع التصميم */
-  font-size: 0.8rem;
-  margin: 4px 0 0 0; /* مسافة بسيطة جداً أسفل الحقل مباشرة */
-  font-weight: 500;
-  text-align: left; /* لتتماشى مع محاذاة النص الإنجليزي في الحقول */
-  display: block;
-  animation: fadeIn 0.3s ease; /* تأثير ظهور ناعم عند خروج الخطأ */
-}
-
-/* تأثير ظهور الرسالة بسلاسة */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* 🛠️ واجهة رسالة النجاح الإضافية */
+/* واجهة النجاح المحدثة */
 .success-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  height: 100%;
-  animation: fadeIn 0.4s ease;
+  padding: 20px 0;
+  animation: scaleUp 0.4s ease-out;
 }
 
 .success-icon {
-  font-size: 4rem;
-  color: #5340e6; /* نفس درجة اللون البنفسجي الأساسي للتصميم */
-  background: rgba(83, 64, 230, 0.1);
-  width: 90px;
-  height: 90px;
+  width: 70px;
+  height: 70px;
+  background-color: #c6f6d5;
+  color: #38a169;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  font-size: 2.2rem;
+  margin: 0 auto 20px auto;
 }
 
 .success-container h2 {
-  color: #2d3748;
-  margin-bottom: 10px !important;
+  color: #2f855a;
+  margin-bottom: 12px;
 }
 
 .success-container p {
-  font-size: 0.95rem;
-  color: #718096;
+  color: #4a5568;
+  font-size: 1rem;
   line-height: 1.6;
-  margin: 0 0 30px 0;
-  max-width: 320px;
+  margin-bottom: 30px;
 }
 
-.success-container .submit-btn {
-  width: 100%;
-  max-width: 250px;
+/* الحركات (Animations) */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* التجاوب مع شاشات الموبايل المتنقلة */
+@media (max-width: 768px) {
+  .auth-container {
+    flex-direction: column;
+    height: auto;
+  }
+  .left-side {
+    padding: 40px 20px;
+  }
+  .right-side {
+    padding: 35px 25px;
+  }
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
 }
